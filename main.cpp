@@ -2,6 +2,7 @@
 #include <Windows.h>
 #include "./headers/helpers.h"
 #include "./headers/nave.h"
+#include "./headers/asteroid.h"
 using namespace std;
 
 int main (void){
@@ -17,13 +18,19 @@ int main (void){
   nave.draw();
   nave.hearts();
 
+  // init asteroid
+  ASTEROID asteroid(rand() % 71 + 4, 4);
+
 
   // main loop
   while (!game_over){
 
+    // move ateroid
+    asteroid.move();
+
     // move nave
     nave.move();
-    nave.exploid();
+    nave.exploite();
 
     // Reduce the continuous loop
     Sleep(30);

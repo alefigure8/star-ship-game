@@ -13,7 +13,7 @@ class NAVE {
     void erase();
     void move();
     void hearts();
-    void exploid();
+    void exploite();
 };
 
 void NAVE::hearts(){
@@ -33,9 +33,9 @@ void NAVE::draw(){
 }
 
 void NAVE::erase(){
-  locate(x,y);      printf("        ");
-  locate(x,y + 1);  printf("        ");
-  locate(x,y + 2);  printf("        ");
+  locate(x,y);      printf("      ");
+  locate(x,y + 1);  printf("      ");
+  locate(x,y + 2);  printf("      ");
 }
 
 void NAVE::move(){
@@ -48,7 +48,7 @@ void NAVE::move(){
   }
 }
 
-void NAVE::exploid(){
+void NAVE::exploite(){
   if(heart == 0){
 
     erase();
@@ -58,9 +58,9 @@ void NAVE::exploid(){
     Sleep(150);
 
     erase();
-    locate(x,y);     printf(" \\ ** / " );
-    locate(x,y + 1); printf("* **** *");
-    locate(x,y + 2); printf(" / ** \\ ");
+    locate(x,y);     printf(" \\**/ " );
+    locate(x,y + 1); printf(" **** ");
+    locate(x,y + 2); printf("/ ** \\");
     Sleep(200);
     erase();
 
