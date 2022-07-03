@@ -41,6 +41,11 @@ int main (void){
     // move lazer
     for(it = lazer.begin(); it != lazer.end(); it++){
       (*it)->move();
+      if((*it)->outOfScreen()){
+        locate((*it)->X(), (*it)->Y()); printf(" ");
+        delete (*it); // delete the iterator
+        it = lazer.erase(it); // for pass the next iterator
+      }
     }
 
     // move ateroid

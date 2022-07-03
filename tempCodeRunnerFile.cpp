@@ -1,4 +1,1 @@
-
-
-  // main loop
-  while (!game_over){
+list<LAZER *>::iterator it
