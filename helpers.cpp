@@ -22,13 +22,12 @@ void locate(int x, int y){
 
 
 // Move the cursor trough the screen
-void moveCursor (char key, int &x, int &y, int &heart){
+void moveCursor (char key, int &x, int &y){
 
   if(key == keyDirection::UP && y > 4) y--;
   if(key == keyDirection::DOWN && y + 3 < 33) y++;
   if(key == keyDirection::LEFT  && x > 3) x--;
   if(key == keyDirection::RIGHT  && x + 6 < 77) x++;
-  if(key == 'e') heart--;
 };
 
 // Hide the cursor

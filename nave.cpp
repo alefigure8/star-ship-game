@@ -9,11 +9,15 @@ class NAVE {
 
   public:
     NAVE(int _x, int _y, int _hearts, int _lives):x(_x), y(_y), heart(_hearts), lives(_lives){}
+    int X(){ return x; };
+    int Y(){ return y; };
+    void heartsDown(){ heart--; };
     void draw();
     void erase();
     void move();
     void hearts();
     void exploite();
+    void crash();
 };
 
 void NAVE::hearts(){
@@ -42,10 +46,18 @@ void NAVE::move(){
   if(kbhit()){
     char key = getch();
     erase();
-    moveCursor (key, x, y, heart);
+    moveCursor (key, x, y);
     draw();
     hearts();
   }
+}
+
+void NAVE::crash(){
+  erase();
+  locate(x,y);      printf(" ***");
+  locate(x,y + 1);  printf(" %c%c%c", 40, 207, 41);
+  locate(x,y + 2);  printf("%c%c %c%c", 30, 190, 190, 30);
+  Sleep(100);
 }
 
 void NAVE::exploite(){
