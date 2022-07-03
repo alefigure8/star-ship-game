@@ -9,11 +9,21 @@ class ASTEROID{
 
   public:
   ASTEROID(int _x, int _y): x(_x), y(_y){};
+  int X(){ return x; };
+  int Y(){ return y; };
   void draw();
   void move();
   void crash(NAVE &nave);
+  void exploite();
 
 };
+
+void ASTEROID::exploite(){
+  locate(x, y); printf(" ");
+  locate(x, y); printf("X");
+  Sleep(200);
+  locate(x, y); printf(" ");
+}
 
 void ASTEROID::draw(){
   locate(x, y); printf("%c", 184);

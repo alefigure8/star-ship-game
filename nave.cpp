@@ -18,6 +18,7 @@ class NAVE {
     void hearts();
     void exploite();
     void crash();
+    bool dead();
 };
 
 void NAVE::hearts(){
@@ -31,7 +32,7 @@ void NAVE::hearts(){
 
 
 void NAVE::draw(){
-  locate(x,y);      printf("  %c", 30);
+  locate(x,y);      printf("  %c ", 30);
   locate(x,y + 1);  printf(" %c%c%c", 40, 207, 41);
   locate(x,y + 2);  printf("%c%c %c%c", 30, 190, 190, 30);
 }
@@ -81,4 +82,11 @@ void NAVE::exploite(){
     hearts();
     draw();
   }
+}
+
+bool NAVE::dead(){
+  if(lives == 0){
+    return true;
+  }
+  return false;
 }
